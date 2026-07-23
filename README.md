@@ -1,6 +1,6 @@
-# Azure Container Apps Jobs orchestrator templates
+# Bring Your Own Orchestrator to Azure Container Apps Jobs
 
-A curated collection of templates for running orchestrated workloads on [Azure Container Apps Jobs](https://learn.microsoft.com/azure/container-apps/jobs). Choose the orchestrator your team already operates, or start with the decision guide below.
+A curated collection of templates that connects the orchestrator you already use to [Azure Container Apps Jobs](https://learn.microsoft.com/azure/container-apps/jobs). Keep your preferred control plane and run containerized tasks on serverless, scale-to-zero job infrastructure.
 
 All templates use Azure Container Apps Jobs for task execution. Unless noted otherwise, the orchestrator remains customer-owned and the template deploys only the Azure target resources required to start and monitor jobs.
 
