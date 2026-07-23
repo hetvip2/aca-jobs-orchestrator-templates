@@ -13,6 +13,7 @@ All templates use Azure Container Apps Jobs for task execution. Unless noted oth
 | Run Kubernetes-native workflows from AKS | [Argo Workflows](https://github.com/hetvip2/argo-workflows-on-aca-jobs) | Uses Argo workflow templates and AKS workload identity |
 | Model long-running business processes with BPMN | [Camunda 8](https://github.com/hetvip2/camunda-8-on-aca-jobs) | Fits BPMN processes, service tasks, and human workflow systems |
 | Use JSON-defined microservice workflows | [Conductor](https://github.com/hetvip2/conductor-on-aca-jobs) | Fits Conductor task workers and `FORK_JOIN` workflows |
+| Run durable, replayable workflows with resilient retries | [Temporal](https://github.com/hetvip2/temporal-on-aca-jobs) | Keeps Temporal as the control plane and runs task workloads on ACA Jobs |
 | Build Python-native data and asset pipelines | [Dagster](https://github.com/hetvip2/dagster-on-aca-jobs) | Uses Dagster ops, assets, and dynamic fan-out |
 | Build Python-native task and flow automation | [Prefect](https://github.com/hetvip2/prefect-on-aca-jobs) | Uses Prefect tasks, flows, and mapped execution |
 | Build visual low-code automation and integrations | [n8n](https://github.com/hetvip2/n8n-on-aca-jobs) | Fits webhook, SaaS integration, and visual automation workflows |
@@ -33,6 +34,7 @@ All templates use Azure Container Apps Jobs for task execution. Unless noted oth
 - **[Argo Workflows](https://github.com/hetvip2/argo-workflows-on-aca-jobs)** for teams already operating Argo on AKS.
 - **[Camunda 8](https://github.com/hetvip2/camunda-8-on-aca-jobs)** for BPMN-based process orchestration.
 - **[Conductor](https://github.com/hetvip2/conductor-on-aca-jobs)** for Conductor task and workflow definitions.
+- **[Temporal](https://github.com/hetvip2/temporal-on-aca-jobs)** for durable, replayable workflows with retries, heartbeats, and long-running fan-out. Temporal stays self-hosted or in Temporal Cloud while ACA Jobs executes the work.
 - **[Dagster](https://github.com/hetvip2/dagster-on-aca-jobs)** for Python data orchestration and asset-centric workflows.
 - **[n8n](https://github.com/hetvip2/n8n-on-aca-jobs)** for visual automation and integration workflows.
 - **[Prefect](https://github.com/hetvip2/prefect-on-aca-jobs)** for Python-native flows and task orchestration.
@@ -67,8 +69,9 @@ A supported shard count is not a throughput guarantee. Validate 25- and 50-shard
 3. Prefer Azure-managed visual data pipelines? Use **Data Factory and Fabric**.
 4. Need connector-heavy application integration? Use **Logic Apps Standard**.
 5. Need durable code-first orchestration? Use **Durable Functions**.
-6. Need Python-first data assets? Use **Dagster**; for general Python flows, use **Prefect**.
-7. Treat **Dapr Workflow** as preview until its documented platform limitation fits your architecture.
+6. Need portable durable workflows, strong retry semantics, and replay across worker restarts? Use **Temporal**.
+7. Need Python-first data assets? Use **Dagster**; for general Python flows, use **Prefect**.
+8. Treat **Dapr Workflow** as preview until its documented platform limitation fits your architecture.
 
 Each repository README is the source of truth for prerequisites, deployment, native runtime evidence, limitations, and cleanup.
 
